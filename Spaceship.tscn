@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Spaceship_horizontal_repeatable_background.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 516.016, 139.515 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 551.028, 189.991 )
+
+[node name="Spaceship" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="YSort" type="YSort" parent="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="Node2D/YSort"]
+position = Vector2( 511.908, 298.431 )
+scale = Vector2( 1.69571, 1 )
+texture = ExtResource( 2 )
+
+[node name="KinematicBody2D" parent="Node2D" instance=ExtResource( 1 )]
+position = Vector2( 39.7066, 428.534 )
+scale = Vector2( 2, 2 )
+collision_layer = 2
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 512.78, 722.554 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 519.131, 188.775 )
+shape = SubResource( 2 )
