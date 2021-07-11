@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/robot_morph_01.mp3-98764d15febe62adc2247eb05b9cece1.mp3str"
+
+[deps]
+
+source_file="res://Sounds/FX/robot_morph_01.mp3"
+dest_files=[ "res://.import/robot_morph_01.mp3-98764d15febe62adc2247eb05b9cece1.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
