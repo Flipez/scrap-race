@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tilesets/Sci-fi Tileset re-imagined.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/Merchant.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Tilesets/SCi-fi assets planet one.png" type="Texture" id=5]
 [ext_resource path="res://scenes/Barrel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/MachinimaSound.com_-_Dystopia.mp3" type="AudioStream" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -594,3 +595,8 @@ disabled = true
 [node name="Dice" parent="." instance=ExtResource( 3 )]
 position = Vector2( 730.103, 390.05 )
 scale = Vector2( 0.3, 0.3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -19.184
+autoplay = true

@@ -91,10 +91,11 @@ extents = Vector2( 8.39445, 1.95644 )
 extents = Vector2( 7.96487, 3.49791 )
 
 [node name="Player" type="KinematicBody2D"]
+position = Vector2( 0, 7.62939e-06 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 35.4715, 57.0967 )
+position = Vector2( -0.569214, -7.97676 )
 texture = ExtResource( 1 )
 offset = Vector2( 20, 0 )
 vframes = 4
@@ -105,11 +106,11 @@ anims/Idle = SubResource( 1 )
 anims/RunRight = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 35.8551, 66.273 )
+position = Vector2( 0.481827, 0.532104 )
 shape = SubResource( 3 )
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 35.9594, 27.7187 )
+position = Vector2( 7, -5.319 )
 collision_mask = 33
 
 [node name="InteractionTimer" type="Timer" parent="Area2D"]
@@ -117,7 +118,7 @@ wait_time = 0.5
 one_shot = true
 
 [node name="InteractionArea" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 7, 30.481 )
+position = Vector2( 0.325806, 0.113401 )
 shape = SubResource( 4 )
 disabled = true
 

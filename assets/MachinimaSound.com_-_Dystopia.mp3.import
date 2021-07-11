@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/MachinimaSound.com_-_Dystopia.mp3-b059515218c0de376d18584bdb8e9e36.mp3str"
+
+[deps]
+
+source_file="res://assets/MachinimaSound.com_-_Dystopia.mp3"
+dest_files=[ "res://.import/MachinimaSound.com_-_Dystopia.mp3-b059515218c0de376d18584bdb8e9e36.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
