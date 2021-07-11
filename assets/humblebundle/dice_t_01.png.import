@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Spaceship_horizontal_repeatable_background.png-ae370e58c71fe4d9352112a95b58eb04.stex"
+path="res://.import/dice_t_01.png-be29ed7193d8309048c5e3d128a9f520.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Spaceship_horizontal_repeatable_background.png"
-dest_files=[ "res://.import/Spaceship_horizontal_repeatable_background.png-ae370e58c71fe4d9352112a95b58eb04.stex" ]
+source_file="res://assets/humblebundle/dice_t_01.png"
+dest_files=[ "res://.import/dice_t_01.png-be29ed7193d8309048c5e3d128a9f520.stex" ]
 
 [params]
 

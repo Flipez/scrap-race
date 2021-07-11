@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Dice.gd" type="Script" id=1]
+[ext_resource path="res://scenes/InteractionBox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/humblebundle/dice_t_01.png" type="Texture" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 96.9885
+
+[node name="Dice" type="StaticBody2D"]
+collision_layer = 33
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 126.607, 127.356 )
+texture = ExtResource( 3 )
+
+[node name="InteractionBox" parent="." instance=ExtResource( 2 )]
+
+[node name="CollisionShape2D" parent="InteractionBox" index="0"]
+position = Vector2( 125.109, 131.102 )
+shape = SubResource( 1 )
+
+[editable path="InteractionBox"]

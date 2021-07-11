@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/george.png-f69d689d4b042183fe3cd0b54260fe9e.stex"
+path="res://.import/idle.png-0ee0d2c9768e6c91f8eafd0fcabc7ae1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://george.png"
-dest_files=[ "res://.import/george.png-f69d689d4b042183fe3cd0b54260fe9e.stex" ]
+source_file="res://Sprites/Barrel/idle.png"
+dest_files=[ "res://.import/idle.png-0ee0d2c9768e6c91f8eafd0fcabc7ae1.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

@@ -1,7 +1,7 @@
 extends Sprite
 
 func _ready():
-	pass # Replace with function body.
+  pass # Replace with function body.
 
 func _process(delta):
-	position.x -= 1
+  position.x -= 1
