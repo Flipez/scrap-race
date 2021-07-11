@@ -24,16 +24,16 @@ shape = SubResource( 1 )
 
 [node name="Particles2D2" type="Particles2D" parent="."]
 position = Vector2( -15.3576, -40.4543 )
-amount = 4
+amount = 3
 lifetime = 1.38
-speed_scale = 0.5
+speed_scale = 0.4
 explosiveness = 0.24
 process_material = SubResource( 2 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
 position = Vector2( 19.6653, -10.1136 )
-amount = 5
+amount = 2
 lifetime = 1.13
-speed_scale = 0.5
+speed_scale = 0.4
 explosiveness = 0.24
 process_material = SubResource( 2 )
