@@ -1,0 +1,111 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/selfmade/Intro_Distant_Stars.png" type="Texture" id=1]
+[ext_resource path="res://assets/selfmade/Intro_BG.png" type="Texture" id=2]
+[ext_resource path="res://Sounds/FX/moving metal contruction.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/selfmade/Intro_Nebula.png" type="Texture" id=4]
+[ext_resource path="res://scenes/InteractionBox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/selfmade/ShipInterior_BG.png" type="Texture" id=7]
+[ext_resource path="res://scenes/ShipInterior_Ship.gd" type="Script" id=8]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 147.032, 51.1145 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 11.659, 53.3985 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 6.9474, 4.14355 )
+
+[node name="ShipInterior" type="Node2D"]
+
+[node name="Space" type="ParallaxBackground" parent="."]
+
+[node name="BG" type="ParallaxLayer" parent="Space"]
+motion_mirroring = Vector2( 1200, 700 )
+__meta__ = {
+"_editor_description_": "	"
+}
+
+[node name="Intro_BG" type="Sprite" parent="Space/BG"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="DistantStars" type="ParallaxLayer" parent="Space"]
+motion_scale = Vector2( 0.1, 0.1 )
+motion_mirroring = Vector2( 1200, 700 )
+
+[node name="Intro_Distant_Stars" type="Sprite" parent="Space/DistantStars"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Nebula" type="ParallaxLayer" parent="Space"]
+motion_scale = Vector2( 0.2, 0.2 )
+motion_mirroring = Vector2( 1200, 700 )
+
+[node name="Intro_Nebula" type="Sprite" parent="Space/Nebula"]
+visible = false
+modulate = Color( 1, 1, 1, 0.168627 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Ship" type="Node2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="ShipInterior_BG" type="Sprite" parent="Ship"]
+position = Vector2( 167.61, 407.715 )
+texture = ExtResource( 7 )
+
+[node name="N-Wall" type="StaticBody2D" parent="Ship"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ship/N-Wall"]
+position = Vector2( 149.212, 362.991 )
+shape = SubResource( 1 )
+
+[node name="S-Wall" type="StaticBody2D" parent="Ship"]
+position = Vector2( 3.77975, 140.166 )
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ship/S-Wall"]
+position = Vector2( 146.692, 362.991 )
+shape = SubResource( 1 )
+
+[node name="E-Wall" type="StaticBody2D" parent="Ship"]
+position = Vector2( 267.733, 67.7208 )
+collision_mask = 0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ship/E-Wall"]
+position = Vector2( 12.0035, 339.627 )
+shape = SubResource( 2 )
+
+[node name="W-Wall" type="StaticBody2D" parent="Ship"]
+position = Vector2( 268.793, 66.6613 )
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ship/W-Wall"]
+position = Vector2( -219.224, 343.6 )
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="Ship"]
+position = Vector2( 143.214, 406.862 )
+current = true
+
+[node name="InteractionBox" parent="Ship" instance=ExtResource( 5 )]
+position = Vector2( 249.162, 433.314 )
+
+[node name="CollisionShape2D" parent="Ship/InteractionBox" index="0"]
+position = Vector2( 0.482468, 2.55557 )
+shape = SubResource( 3 )
+
+[node name="Player" parent="Ship" instance=ExtResource( 9 )]
+position = Vector2( 98.7185, 424.838 )
+collision_layer = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -16.155
+autoplay = true
+
+[editable path="Ship/InteractionBox"]
