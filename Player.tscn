@@ -96,9 +96,9 @@ script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -0.569214, -7.97676 )
-texture = ExtResource( 1 )
+texture = ExtResource( 3 )
 offset = Vector2( 20, 0 )
-vframes = 4
+vframes = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
