@@ -43,7 +43,7 @@ func _input(event):
         
         if dialog_pos >= dialog.size():
             $Player/Dialog.hide()
-            get_tree().change_scene("res://Spaceship.tscn")
+            get_tree().change_scene("res://scenes/LandingSite.tscn")
             return
         
         var msg = dialog[dialog_pos]       
