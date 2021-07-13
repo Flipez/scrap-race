@@ -1,6 +1,6 @@
 extends Control
 
-#onready var ok_key = $NinePatchRect/Control/Ok_Key
+onready var ok_key = $Ok_Key
 
 onready var box = $Box
 onready var speaker = $Box/Speaker
@@ -43,12 +43,12 @@ func new_dialog(dialog):
   
 func new_unskippable_dialog(dialog):
   unskippable = true
-  #ok_key.visible = false
+  ok_key.visible = false
   new_dialog(dialog)
 
 
 func quit_dialog():
-  #ok_key.visible = true
+  ok_key.visible = true
   visible = false
   activeDialog = false
   current_line = 0

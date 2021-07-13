@@ -7,12 +7,17 @@ export var ACCELERATION = 500
 export var MAX_SPEED = 10
 export var DIRECTION = Vector2.LEFT
 
-func _physics_process(delta):
-  velocity = velocity.move_toward(DIRECTION * MAX_SPEED, ACCELERATION * delta)
-  move_and_slide(velocity)
+#func _physics_process(delta):
+#  velocity = velocity.move_toward(DIRECTION * MAX_SPEED, ACCELERATION * delta)
+#  move_and_slide(velocity)
 
-func interact(_player):
-  print("the merchant")
+func interact(player):
+  DialogController.createDialog([
+    ["Scrat", "Hello, can you tell me where I can find the secret entrance to the bunker?"],
+    ["Merchant", "Why should I know where the secret entrance is?"],
+    ["Scrat", "I assumed you as a merchant do know a lot stuff"],
+    ["Merchant", "Thats true, but my informations are not for free"]
+   ])
 
 
 func _on_Timer_timeout():
