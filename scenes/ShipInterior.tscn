@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://assets/selfmade/Intro_Distant_Stars.png" type="Texture" id=1]
 [ext_resource path="res://assets/selfmade/Intro_BG.png" type="Texture" id=2]
@@ -14,6 +14,17 @@
 [ext_resource path="res://assets/selfmade/ShipInterior_carpet.png" type="Texture" id=12]
 [ext_resource path="res://assets/selfmade/ShipInterior_PC.png" type="Texture" id=13]
 [ext_resource path="res://assets/selfmade/ShipInterior_couch.png" type="Texture" id=14]
+[ext_resource path="res://assets/selfmade/SpaceShip_swag.png" type="Texture" id=15]
+[ext_resource path="res://scenes/ShipInterior_couch.gd" type="Script" id=16]
+[ext_resource path="res://assets/selfmade/ShipInterior_VendingMachine.png" type="Texture" id=17]
+[ext_resource path="res://scenes/ShipInterior_carpet.gd" type="Script" id=18]
+[ext_resource path="res://scenes/ShipInterior_TrapDoor.gd" type="Script" id=19]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 147.032, 51.1145 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 11.659, 53.3985 )
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 7 )
@@ -35,17 +46,20 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 147.032, 51.1145 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 11.659, 53.3985 )
-
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 24.5727, 11.6383 )
 
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 6.9474, 4.14355 )
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 80.115, 32.135 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 33.8892, 25.115 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 35.7643, 13.5525 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 6.84937, 4.01703 )
 
 [node name="ShipInterior" type="Node2D"]
 script = ExtResource( 11 )
@@ -83,14 +97,7 @@ centered = false
 [node name="Ship" type="Node2D" parent="."]
 script = ExtResource( 8 )
 
-[node name="ShipInterior_BG" type="AnimatedSprite" parent="Ship"]
-position = Vector2( 167.61, 407.715 )
-frames = SubResource( 4 )
-frame = 2
-playing = true
-
 [node name="N-Wall" type="StaticBody2D" parent="Ship"]
-visible = false
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ship/N-Wall"]
@@ -121,15 +128,10 @@ collision_mask = 0
 position = Vector2( -219.224, 343.6 )
 shape = SubResource( 6 )
 
-[node name="Camera2D" type="Camera2D" parent="Ship"]
-position = Vector2( 143.214, 406.862 )
-current = true
-
-[node name="Dialog" parent="Ship/Camera2D" instance=ExtResource( 6 )]
-margin_left = -158.0
-margin_top = 17.0
-margin_right = 158.0
-margin_bottom = 89.0
+[node name="ShipInterior_BG" type="AnimatedSprite" parent="Ship"]
+position = Vector2( 167.61, 407.715 )
+frames = SubResource( 4 )
+playing = true
 
 [node name="Computer" type="Node2D" parent="Ship"]
 script = ExtResource( 10 )
@@ -140,13 +142,6 @@ script = ExtResource( 10 )
 position = Vector2( 198.407, 410.453 )
 shape = SubResource( 7 )
 
-[node name="InteractionBox" parent="Ship" instance=ExtResource( 5 )]
-position = Vector2( 249.162, 433.314 )
-
-[node name="CollisionShape2D" parent="Ship/InteractionBox" index="0"]
-position = Vector2( 0.482468, 2.55557 )
-shape = SubResource( 8 )
-
 [node name="ShipInterior_PC" type="Sprite" parent="Ship"]
 position = Vector2( 145.459, 403.852 )
 scale = Vector2( 0.2, 0.2 )
@@ -156,15 +151,63 @@ texture = ExtResource( 13 )
 position = Vector2( 129.079, 436.229 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 12 )
+script = ExtResource( 18 )
+
+[node name="InteractionBox" parent="Ship/ShipInterior_carpet" instance=ExtResource( 5 )]
+
+[node name="CollisionShape2D" parent="Ship/ShipInterior_carpet/InteractionBox" index="0"]
+shape = SubResource( 11 )
 
 [node name="ShipInterior_couch" type="Sprite" parent="Ship"]
 position = Vector2( 89.0693, 400.671 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 14 )
+script = ExtResource( 16 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Ship/ShipInterior_couch"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ship/ShipInterior_couch/KinematicBody2D"]
+position = Vector2( -3.12498, 20 )
+shape = SubResource( 9 )
+
+[node name="InteractionBox" parent="Ship/ShipInterior_couch" instance=ExtResource( 5 )]
+
+[node name="CollisionShape2D" parent="Ship/ShipInterior_couch/InteractionBox" index="0"]
+position = Vector2( -2.1875, 45.3125 )
+shape = SubResource( 10 )
+
+[node name="ShipInterior_VendingMachine" type="Sprite" parent="Ship"]
+position = Vector2( 252.691, 397.759 )
+scale = Vector2( 0.303633, 0.303633 )
+texture = ExtResource( 17 )
+
+[node name="SpaceShip_swag" type="Sprite" parent="Ship"]
+position = Vector2( 119.83, 379.049 )
+scale = Vector2( 0.484951, 0.600574 )
+texture = ExtResource( 15 )
 
 [node name="Player" parent="Ship" instance=ExtResource( 9 )]
-position = Vector2( 136.428, 424.671 )
+position = Vector2( 83.053, 421.421 )
 collision_layer = 2
+
+[node name="Camera2D" type="Camera2D" parent="Ship"]
+position = Vector2( 143.214, 406.862 )
+current = true
+
+[node name="Dialog" parent="Ship/Camera2D" instance=ExtResource( 6 )]
+margin_left = -158.0
+margin_top = 16.0
+margin_right = 158.0
+margin_bottom = 94.0
+
+[node name="TrapDoor" type="Node2D" parent="Ship"]
+script = ExtResource( 19 )
+
+[node name="InteractionBox" parent="Ship/TrapDoor" instance=ExtResource( 5 )]
+
+[node name="CollisionShape2D" parent="Ship/TrapDoor/InteractionBox" index="0"]
+position = Vector2( 249.707, 435.493 )
+shape = SubResource( 12 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
@@ -172,4 +215,6 @@ volume_db = -16.155
 autoplay = true
 
 [editable path="Ship/Computer/InteractionBox"]
-[editable path="Ship/InteractionBox"]
+[editable path="Ship/ShipInterior_carpet/InteractionBox"]
+[editable path="Ship/ShipInterior_couch/InteractionBox"]
+[editable path="Ship/TrapDoor/InteractionBox"]

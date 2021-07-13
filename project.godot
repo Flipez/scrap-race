@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 DialogController="*res://DialogController.gd"
+StoryState="*res://StoryState.gd"
 
 [display]
 
