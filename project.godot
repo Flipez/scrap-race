@@ -14,6 +14,10 @@ config/name="SpaceIndie"
 run/main_scene="res://scenes/LandingSite.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+DialogController="*res://DialogController.gd"
+
 [display]
 
 window/size/width=320

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/fonts/dialog_speaker.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/fonts/dialog_message.tres" type="DynamicFont" id=2]
 [ext_resource path="res://assets/selfmade/Dialog_Arrow.png" type="Texture" id=3]
+[ext_resource path="res://UI/Dialog.gd" type="Script" id=4]
 
 [node name="Dialog" type="PanelContainer"]
 visible = false
@@ -10,6 +11,7 @@ margin_left = 3.00002
 margin_top = 187.0
 margin_right = 479.0
 margin_bottom = 266.0
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
