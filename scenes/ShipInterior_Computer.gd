@@ -1,7 +1,6 @@
 extends Node2D
 
-var story_pos = 0
-var dialog = [
+var dialog1 = [
     ['Scrat', 'Ok M.O.M. what can you tell me about the planet?'],
     ['M.O.M', "Yet another boring planet. Mostly used as junkyard. I don't think we'll find anything special there."],
     ['Scrat', "We'll see about that. You know my pinky toe itched. That's always a good sign."],
@@ -20,5 +19,5 @@ var dialog = [
 ]
 
 func interact(_player):    
-    DialogController.createDialog(dialog)
-    story_pos += 1
+    DialogController.createDialog(dialog1)
+    StoryState.intro = StoryState.Intro.FindFuel
