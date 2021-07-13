@@ -1,4 +1,4 @@
 extends Sprite
 
-func interact(player):
+func interact(_player):
     DialogController.createDialog([['Scrat', "My comfy old bed"]])
