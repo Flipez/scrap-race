@@ -19,12 +19,19 @@ onready var interactionTimer = $Area2D/InteractionTimer
 onready var interactionArea = $Area2D/InteractionArea
 onready var playerSprite = $Sprite
 
+func _ready():
+  var _return = DialogController.connect("new_dialog", self, "freeze")
+  _return = DialogController.connect("new_unskippable_dialog", self, "freeze")
+  _return = DialogController.connect("dialog_exited", self, "unfreeze")
+
 func _physics_process(delta):
   match state:
     MOVE:
       move_state(delta)
     INTERACT:
       interact_state()
+    DIALOG:
+      dialog_state()
   
 func move_state(delta):
   var input_vector = Vector2.ZERO
@@ -69,3 +76,12 @@ func _on_InteractionTimer_timeout():
 
 func _on_Area2D_area_entered(area):
   area.interact(self)
+  
+func dialog_state():
+  velocity = Vector2.ZERO
+  
+func freeze(_dialog = ""):
+  state = DIALOG
+  
+func unfreeze(_value = ""):
+  state = MOVE
