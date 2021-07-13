@@ -1,7 +1,7 @@
 extends Node
 
 var cooldown = Timer.new()
-var dialog_pos = -1
+var story_pos = -2
 var dialog = [
     ['???', 'Scrat...'],
     ['???', 'Scrat!'],
@@ -20,37 +20,55 @@ var dialog = [
 ]
 
 func _ready():
-    # $Player/Dialog.hide()
+    $Player/Dialog.hide()
     cooldown.one_shot = true
     cooldown.connect("timeout", self, "_on_timer_timeout")
     add_child(cooldown)
-
+    
+func _process(delta):
+    if story_pos >= 0:
+        return
+        
+    if story_pos == -1:
+        $Player/Camera2D.position.y += (delta * 20)
+    if $Player/Camera2D.position.y > 153:
+        story_pos += 1
+        show_dialog(dialog[story_pos])
+        
+func show_dialog(msg):
+    $Player/Dialog/Box/Speaker.text = msg[0]
+    $Player/Dialog/Box/Message.text = msg[1]
+    $Player/Dialog.show()
+    cooldown.start(0.5)    
+    
 func _input(event):
-    print(cooldown.time_left)
     if cooldown.time_left > 0:
         return 
+    
+    # Don't accept input during the animation
+    if story_pos == -1:
+        return
 
     if InputMap.event_is_action(event, 'ui_interact'):
         $Player/Dialog/Arrow.hide()
-        dialog_pos += 1
-
+        story_pos += 1
+        
         # Call Mom        
-        if dialog_pos == 10:
+        if story_pos == 10:
             $Telephone.play()
             
-        if dialog_pos == 12:
+        if story_pos == 12:
             $Telephone.stop()
         
-        if dialog_pos >= dialog.size():
+        if story_pos >= dialog.size():
             $Player/Dialog.hide()
             get_tree().change_scene("res://scenes/ShipInterior.tscn")
             return
-        
-        var msg = dialog[dialog_pos]       
-        $Player/Dialog/Box/Speaker.text = msg[0]
-        $Player/Dialog/Box/Message.text = msg[1]
-        $Player/Dialog.show()
-        cooldown.start(0.5)
+            
+        if story_pos < 0:
+            return
+            
+        show_dialog(dialog[story_pos])
 
 func _on_timer_timeout():
     $Player/Dialog/Arrow.show()

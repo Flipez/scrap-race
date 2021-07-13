@@ -104,12 +104,12 @@ __meta__ = {
 }
 
 [node name="Action" type="RichTextLabel" parent="Player/HUD/Help"]
-margin_left = 400.477
-margin_top = 332.671
-margin_right = 900.477
-margin_bottom = 382.671
+margin_left = 344.477
+margin_top = 328.671
+margin_right = 844.477
+margin_bottom = 378.671
 custom_fonts/normal_font = ExtResource( 9 )
-text = "Press F to Interact"
+text = "Press F to Start the Game"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -141,12 +141,15 @@ process_material = SubResource( 1 )
 texture = ExtResource( 10 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( 241.335, 133.665 )
+position = Vector2( 242.335, 112.665 )
 rotation = -1.5708
 current = true
-zoom = Vector2( 1.5, 1.5 )
 
 [node name="Dialog" parent="Player" instance=ExtResource( 12 )]
+margin_left = 84.0
+margin_top = 166.0
+margin_right = 399.0
+margin_bottom = 243.0
 
 [node name="Title" type="Label" parent="Player"]
 margin_left = 119.189
@@ -155,6 +158,9 @@ margin_right = 390.19
 margin_bottom = 100.757
 custom_fonts/font = SubResource( 2 )
 text = "Scrat Race"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Space" type="ParallaxBackground" parent="."]
 
