@@ -157,7 +157,7 @@ margin_top = -13.2433
 margin_right = 390.19
 margin_bottom = 100.757
 custom_fonts/font = SubResource( 2 )
-text = "Scrat Race"
+text = "Scrap Race"
 __meta__ = {
 "_edit_use_anchors_": false
 }
