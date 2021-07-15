@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sprites/rocket.png" type="Texture" id=1]
+[ext_resource path="res://scenes/InteractionBox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Rocket.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 27.7437, 55.8859 )
@@ -12,7 +14,11 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 color = Color( 0.427451, 0.415686, 0.415686, 1 )
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 19.7701, 55.1194 )
+
 [node name="Rocket" type="StaticBody2D"]
+script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -37,3 +43,11 @@ lifetime = 1.13
 speed_scale = 0.4
 explosiveness = 0.24
 process_material = SubResource( 2 )
+
+[node name="InteractionBox" parent="." instance=ExtResource( 2 )]
+
+[node name="CollisionShape2D" parent="InteractionBox" index="0"]
+position = Vector2( 0, -2.80932 )
+shape = SubResource( 3 )
+
+[editable path="InteractionBox"]

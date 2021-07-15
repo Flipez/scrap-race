@@ -57,7 +57,7 @@ func move_state(delta):
     playerSprite.offset.x = -20
     interactionArea.position.x = -7
   
-  if Input.is_action_just_pressed("ui_interact"):
+  if Input.is_action_just_pressed("ui_interact") && state == MOVE:
     state = INTERACT
     interactionTimer.start(0.15)
   
@@ -80,8 +80,13 @@ func _on_Area2D_area_entered(area):
 func dialog_state():
   velocity = Vector2.ZERO
   
-func freeze(_dialog = ""):
+func freeze(_dialog = "", _caller = "", _on_exit_signal = ""):
+  interactionTimer.stop()
+  call_deferred("disable_interaction")
   state = DIALOG
   
 func unfreeze(_value = ""):
   state = MOVE
+
+func disable_interaction():
+  interactionArea.disabled = true
