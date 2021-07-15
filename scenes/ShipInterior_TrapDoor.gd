@@ -13,4 +13,4 @@ func interact(_player):
     DialogController.createDialog([['Scrat', "Here we go!"]], self, 'finish_scene')
     
 func _switch_scene():    
-    get_tree().change_scene("res://scenes/LandingSite.tscn")
+    get_tree().change_scene("res://scenes/Puzzle_1.tscn")

@@ -25,7 +25,7 @@ func _process(_delta):
     if Input.is_action_just_pressed("ui_interact"):
       if lines.size() > current_line + 1:
         current_line += 1
-        new_dialog(lines)
+        new_dialog(lines, callback_ref, callback_signal)
       else:
         quit_dialog()
 

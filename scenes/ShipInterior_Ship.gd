@@ -1,8 +1,10 @@
 extends Node2D
 
-func _process(_delta):
-    position.x -= 2
+var landing = false
 
-# TODO, placeholder
-func interact(_player):
-    get_tree().change_scene("res://scenes/LandingSite.tscn")
+func _process(_delta):
+    if landing:
+        position.x -= 30
+        position.y += 10
+    else:
+        position.x -= 5
