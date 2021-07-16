@@ -1,9 +1,9 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Tilesets/Sci-fi Tileset re-imagined.png" type="Texture" id=1]
 [ext_resource path="res://Tilesets/SCi-fi assets planet one.png" type="Texture" id=2]
 [ext_resource path="res://Sounds/FX/moving metal contruction.wav" type="AudioStream" id=3]
-[ext_resource path="res://assets/MachinimaSound.com_-_Dystopia.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/FX/landing_site_ambience.mp3" type="AudioStream" id=4]
 [ext_resource path="res://scenes/ContainerEntrance.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Barrel.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Merchant.tscn" type="PackedScene" id=7]
@@ -12,6 +12,11 @@
 [ext_resource path="res://scenes/Merchant Stand.tscn" type="PackedScene" id=10]
 [ext_resource path="res://UI/Dialog.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/LandingSite.gd" type="Script" id=12]
+[ext_resource path="res://Sprites/foosball.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/bike.png" type="Texture" id=14]
+[ext_resource path="res://scenes/InteractionBox.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/Foosball.gd" type="Script" id=16]
+[ext_resource path="res://Sprites/ring.png" type="Texture" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -1291,6 +1296,52 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 19/shapes = [  ]
 19/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 11.4343, 10 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 13 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 13 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 13 )
+region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 13 )
+region = Rect2( 256, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 13 )
+region = Rect2( 320, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 13 )
+region = Rect2( 384, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 13 )
+region = Rect2( 448, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=28]
+animations = [ {
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 23.6744, 21.1575 )
+
 [node name="LandingSite" type="Node2D"]
 script = ExtResource( 12 )
 
@@ -1302,6 +1353,11 @@ cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
 tile_data = PoolIntArray( 851968, 4, 0, 851984, 4, 0, 917504, 4, 0, 917520, 4, 0, 983040, 4, 0, 983056, 4, 0, 1048576, 4, 0, 1048592, 4, 0, 1114112, 4, 0, 1114128, 4, 0, 1179648, 4, 0, 1179664, 4, 0, 1245184, 4, 0, 1245200, 4, 0, 1310720, 4, 0, 1310736, 4, 0, 1376256, 3, 0, 1376272, 3, 0, 1507328, 2, 0, 1507344, 2, 0, 1572864, 2, 0, 1572880, 2, 0, 1638400, 2, 0, 1638416, 2, 0, 1703936, 2, 0, 1703952, 2, 0, 1769472, 2, 0, 1769488, 2, 0, 1835008, 4, 0, 1835024, 4, 0 )
+
+[node name="Bike" type="Sprite" parent="Node2D"]
+position = Vector2( 175.491, 371.497 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 14 )
 
 [node name="TileMap" type="TileMap" parent="Node2D"]
 tile_set = SubResource( 18 )
@@ -1316,6 +1372,30 @@ cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
 tile_data = PoolIntArray( 1441811, 7, 0, 1441812, 19, 0, 1441820, 19, 0, 1507328, 4, 0, 1507329, 1, 0, 1507330, 0, 0, 1507331, 1, 0, 1507332, 0, 0, 1507333, 0, 0, 1507338, 10, 0, 1507339, 1, 0, 1507340, 0, 0, 1507345, 2, 0, 1507346, 3, 0, 1507347, 8, 0, 1507351, 17, 0, 1507352, 18, 0, 1507354, 0, 0, 1507355, 2, 0, 1507356, 1, 0, 1835031, 9, 0, 1835034, 18, 0, 1835037, 14, 0, 1835039, 17, 0 )
+
+[node name="Ring" type="Sprite" parent="Node2D"]
+position = Vector2( 96.0138, 376.109 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Foosball" type="StaticBody2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Foosball"]
+position = Vector2( 37.1939, 433.887 )
+shape = SubResource( 29 )
+
+[node name="Foosball" type="AnimatedSprite" parent="Node2D/Foosball"]
+position = Vector2( 36.6657, 425.917 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 28 )
+playing = true
+script = ExtResource( 16 )
+
+[node name="InteractionBox" parent="Node2D/Foosball/Foosball" instance=ExtResource( 15 )]
+
+[node name="CollisionShape2D" parent="Node2D/Foosball/Foosball/InteractionBox" index="0"]
+position = Vector2( 0.943878, 16.5178 )
+shape = SubResource( 30 )
 
 [node name="YSort" type="Node2D" parent="Node2D"]
 
@@ -1378,7 +1458,7 @@ position = Vector2( 299.126, 50.9225 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -16.155
+volume_db = -25.242
 autoplay = true
 
 [node name="DialogStartTimer" type="Timer" parent="."]
@@ -1387,4 +1467,5 @@ autostart = true
 
 [connection signal="timeout" from="DialogStartTimer" to="." method="_on_DialogStartTimer_timeout"]
 
+[editable path="Node2D/Foosball/Foosball/InteractionBox"]
 [editable path="Node2D/YSort/Player/Dialog"]

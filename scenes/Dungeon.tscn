@@ -13,7 +13,7 @@
 [ext_resource path="res://Sounds/FX/coins.wav" type="AudioStream" id=11]
 [ext_resource path="res://scenes/PuzzleWall2.gd" type="Script" id=12]
 [ext_resource path="res://scenes/PuzzleWall1and3.gd" type="Script" id=13]
-[ext_resource path="res://Sounds/FX/dungeon_ambience.wav" type="AudioStream" id=14]
+[ext_resource path="res://Sounds/FX/dungeon_ambience.mp3" type="AudioStream" id=14]
 [ext_resource path="res://scenes/Dungeon.gd" type="Script" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=26]
@@ -1000,26 +1000,25 @@ frame = 1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Node2D/YSort"]
 position = Vector2( 22.7785, 386.969 )
 frames = SubResource( 38 )
-frame = 1
+frame = 7
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Node2D/YSort"]
 position = Vector2( -160.784, 399.469 )
 frames = SubResource( 38 )
-frame = 2
 playing = true
 offset = Vector2( 265.618, -11.9054 )
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Node2D/YSort"]
 position = Vector2( 298.517, 387.861 )
 frames = SubResource( 38 )
-frame = 6
+frame = 4
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Node2D/YSort"]
 position = Vector2( 392.919, 385.78 )
 frames = SubResource( 38 )
-frame = 4
+frame = 2
 playing = true
 
 [node name="Chest" type="StaticBody2D" parent="Node2D/YSort"]

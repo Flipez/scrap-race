@@ -12,7 +12,7 @@
 [ext_resource path="res://assets/selfmade/Fire.png" type="Texture" id=10]
 [ext_resource path="res://scenes/Intro.gd" type="Script" id=11]
 [ext_resource path="res://UI/Dialog.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Sounds/FX/moving metal contruction.wav" type="AudioStream" id=13]
+[ext_resource path="res://Sounds/FX/intro_ambience.mp3" type="AudioStream" id=13]
 [ext_resource path="res://Sounds/FX/Alert (2).wav" type="AudioStream" id=14]
 [ext_resource path="res://assets/fonts/Qahiri/Qahiri-Regular.ttf" type="DynamicFontData" id=17]
 
@@ -194,6 +194,7 @@ centered = false
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
+volume_db = -17.165
 autoplay = true
 
 [node name="Telephone" type="AudioStreamPlayer" parent="."]
