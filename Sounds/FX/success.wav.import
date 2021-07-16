@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/success.wav-66120f3c30009af26017d55e9e7d5821.sample"
+
+[deps]
+
+source_file="res://Sounds/FX/success.wav"
+dest_files=[ "res://.import/success.wav-66120f3c30009af26017d55e9e7d5821.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

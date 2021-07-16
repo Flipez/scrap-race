@@ -118,7 +118,6 @@ margin_bottom = 74.0
 
 [node name="Ok_Key" parent="Dialog" index="2"]
 position = Vector2( 304.271, 72.7605 )
-frame = 1
 
 [node name="Engine" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )

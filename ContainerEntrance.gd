@@ -2,7 +2,7 @@ extends StaticBody2D
 
 func interact(player):
   if StoryState.landingSite == StoryState.landingSiteStates.FoundBunker:
-    var _return = get_tree().change_scene("res://scenes/TestSceneLoad.tscn")
+    var _return = get_tree().change_scene("res://scenes/Dungeon.tscn")
     get_tree().root.add_child(player)
   else:
     DialogController.createDialog([

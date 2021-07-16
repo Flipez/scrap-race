@@ -1339,7 +1339,7 @@ volume_db = -19.184
 autoplay = true
 
 [node name="ContainerEntrance" parent="Node2D/YSort" instance=ExtResource( 5 )]
-position = Vector2( 542.46, 391.319 )
+position = Vector2( 386.545, 417.777 )
 
 [node name="Player" parent="Node2D/YSort" instance=ExtResource( 9 )]
 position = Vector2( 90.844, 412.239 )
@@ -1374,7 +1374,7 @@ margin_right = 298.0
 margin_bottom = 49.0
 
 [node name="Ok_Key" parent="Node2D/YSort/Player/Dialog" index="2"]
-position = Vector2( 300.25, 65.1564 )
+position = Vector2( 299.126, 50.9225 )
 frame = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
