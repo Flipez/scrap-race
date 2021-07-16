@@ -11,14 +11,14 @@ config_version=4
 [application]
 
 config/name="SpaceIndie"
-run/main_scene="res://scenes/Intro.tscn"
+run/main_scene="res://Scenes/Intro/Intro.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-DialogController="*res://DialogController.gd"
-StoryState="*res://StoryState.gd"
-InventoryController="*res://InventoryController.gd"
+DialogController="*res://Helpers/DialogController.gd"
+StoryState="*res://Helpers/StoryState.gd"
+InventoryController="*res://Helpers/InventoryController.gd"
 
 [display]
 

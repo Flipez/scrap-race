@@ -5,7 +5,6 @@ onready var ok_key = $Ok_Key
 onready var box = $Box
 onready var speaker = $Box/Speaker
 onready var message = $Box/Message
-onready var arrow = $Arrow
 
 var activeDialog = false
 var lines = null
