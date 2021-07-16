@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/intro_ambience.mp3-f1cf0c2cef9a03c8529bc65a229d89c5.mp3str"
+
+[deps]
+
+source_file="res://Sounds/FX/intro_ambience.mp3"
+dest_files=[ "res://.import/intro_ambience.mp3-f1cf0c2cef9a03c8529bc65a229d89c5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

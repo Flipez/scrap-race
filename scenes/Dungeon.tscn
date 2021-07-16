@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Tilesets/Sci-fi Tileset re-imagined.png" type="Texture" id=1]
 [ext_resource path="res://Tilesets/0x72_16x16DungeonTileset.v4.png" type="Texture" id=2]
@@ -13,7 +13,7 @@
 [ext_resource path="res://Sounds/FX/coins.wav" type="AudioStream" id=11]
 [ext_resource path="res://scenes/PuzzleWall2.gd" type="Script" id=12]
 [ext_resource path="res://scenes/PuzzleWall1and3.gd" type="Script" id=13]
-[ext_resource path="res://Sounds/FX/dungeon_ambience.wav" type="AudioStream" id=14]
+[ext_resource path="res://Sounds/FX/dungeon_ambience.mp3" type="AudioStream" id=14]
 [ext_resource path="res://scenes/Dungeon.gd" type="Script" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=26]
@@ -914,6 +914,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=43]
+extents = Vector2( 7.91031, 6.50137 )
+
 [sub_resource type="RectangleShape2D" id=39]
 extents = Vector2( 7.78647, 7.0542 )
 
@@ -997,29 +1000,35 @@ frame = 1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Node2D/YSort"]
 position = Vector2( 22.7785, 386.969 )
 frames = SubResource( 38 )
-frame = 4
+frame = 7
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Node2D/YSort"]
 position = Vector2( -160.784, 399.469 )
 frames = SubResource( 38 )
-frame = 5
 playing = true
 offset = Vector2( 265.618, -11.9054 )
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Node2D/YSort"]
 position = Vector2( 298.517, 387.861 )
 frames = SubResource( 38 )
-frame = 1
+frame = 4
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Node2D/YSort"]
 position = Vector2( 392.919, 385.78 )
 frames = SubResource( 38 )
-frame = 7
+frame = 2
 playing = true
 
-[node name="Chest" type="Sprite" parent="Node2D/YSort"]
+[node name="Chest" type="StaticBody2D" parent="Node2D/YSort"]
+position = Vector2( 0.280609, 0.561218 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/YSort/Chest"]
+position = Vector2( 377.989, 415.311 )
+shape = SubResource( 43 )
+
+[node name="Chest" type="Sprite" parent="Node2D/YSort/Chest"]
 position = Vector2( 377.87, 415.033 )
 texture = ExtResource( 2 )
 hframes = 16
@@ -1027,12 +1036,12 @@ vframes = 16
 frame = 190
 script = ExtResource( 6 )
 
-[node name="AudioStreamPlayerTreasure" type="AudioStreamPlayer" parent="Node2D/YSort/Chest"]
+[node name="AudioStreamPlayerTreasure" type="AudioStreamPlayer" parent="Node2D/YSort/Chest/Chest"]
 stream = ExtResource( 7 )
 
-[node name="InteractionBox" parent="Node2D/YSort/Chest" instance=ExtResource( 4 )]
+[node name="InteractionBox" parent="Node2D/YSort/Chest/Chest" instance=ExtResource( 4 )]
 
-[node name="CollisionShape2D" parent="Node2D/YSort/Chest/InteractionBox" index="0"]
+[node name="CollisionShape2D" parent="Node2D/YSort/Chest/Chest/InteractionBox" index="0"]
 position = Vector2( 0, 0.594604 )
 shape = SubResource( 39 )
 
@@ -1080,7 +1089,7 @@ position = Vector2( 2.08112, 8.62173 )
 shape = SubResource( 41 )
 
 [editable path="Node2D/YSort/Player/Dialog"]
-[editable path="Node2D/YSort/Chest/InteractionBox"]
+[editable path="Node2D/YSort/Chest/Chest/InteractionBox"]
 [editable path="Node2D/Sign/InteractionBox"]
 [editable path="Node2D/PuzzleWall1and3/InteractionBox"]
 [editable path="Node2D/PuzzleWall2/InteractionBox"]
