@@ -6,7 +6,6 @@ var dialog = [
     ['???', 'Scrat...'],
     ['???', 'Scrat!'],
     ['???', 'SCRAT!!!'],
-    # Clonk
     ['Scrat', 'Huh?'],
     ['???', 'WAKE UP!!!'],
     ['Scrat', "Why? It's like...oh...well...it's too early too stand up."],
@@ -31,7 +30,9 @@ func _process(delta):
         
     if story_pos == -1:
         $Player/Camera2D.position.y += (delta * 20)
-    if $Player/Camera2D.position.y > 153:
+        $Player/HUD.modulate.a8 -= 2
+    if $Player/Camera2D.position.y > 170:
+        $Player/HUD.hide()
         story_pos += 1
         show_dialog(dialog[story_pos])
         
@@ -50,7 +51,6 @@ func _input(event):
         return
 
     if InputMap.event_is_action(event, 'ui_interact'):
-        $Player/Dialog/Arrow.hide()
         story_pos += 1
         
         # Call Mom        
@@ -69,6 +69,3 @@ func _input(event):
             return
             
         show_dialog(dialog[story_pos])
-
-func _on_timer_timeout():
-    $Player/Dialog/Arrow.show()

@@ -7,4 +7,4 @@ func _process(_delta):
         position.x -= 30
         position.y += 10
     else:
-        position.x -= 5
+        position.x -= 10

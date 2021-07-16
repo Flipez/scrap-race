@@ -21,17 +21,17 @@
 [ext_resource path="res://scenes/ShipInterior_TrapDoor.gd" type="Script" id=19]
 [ext_resource path="res://scenes/ShipInterior_VendingM.gd" type="Script" id=20]
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 147.032, 51.1145 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 11.659, 53.3985 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 320, 160 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 7 )
 region = Rect2( 320, 0, 320, 160 )
 
@@ -39,29 +39,29 @@ region = Rect2( 320, 0, 320, 160 )
 atlas = ExtResource( 7 )
 region = Rect2( 640, 0, 320, 160 )
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 5 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 24.5727, 11.6383 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 80.115, 32.135 )
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 33.8892, 25.115 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 35.7643, 13.5525 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=11]
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 6.84937, 4.01703 )
 
 [node name="ShipInterior" type="Node2D"]
@@ -106,7 +106,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ship/N-Wall"]
 position = Vector2( 149.212, 362.991 )
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="S-Wall" type="StaticBody2D" parent="Ship"]
 position = Vector2( 3.77975, 140.166 )
@@ -114,7 +114,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ship/S-Wall"]
 position = Vector2( 146.692, 362.991 )
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="E-Wall" type="StaticBody2D" parent="Ship"]
 position = Vector2( 267.733, 67.7208 )
@@ -122,7 +122,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ship/E-Wall"]
 position = Vector2( 12.0035, 339.627 )
-shape = SubResource( 7 )
+shape = SubResource( 2 )
 
 [node name="W-Wall" type="StaticBody2D" parent="Ship"]
 position = Vector2( 268.793, 66.6613 )
@@ -130,12 +130,12 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ship/W-Wall"]
 position = Vector2( -219.224, 343.6 )
-shape = SubResource( 7 )
+shape = SubResource( 2 )
 
 [node name="ShipInterior_BG" type="AnimatedSprite" parent="Ship"]
 position = Vector2( 167.61, 407.715 )
-frames = SubResource( 10 )
-frame = 1
+frames = SubResource( 6 )
+frame = 2
 playing = true
 
 [node name="Computer" type="Node2D" parent="Ship"]
@@ -145,7 +145,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" parent="Ship/Computer/InteractionBox" index="0"]
 position = Vector2( 198.407, 410.453 )
-shape = SubResource( 11 )
+shape = SubResource( 7 )
 
 [node name="PC" type="Sprite" parent="Ship"]
 position = Vector2( 154.813, 409.42 )
@@ -161,7 +161,7 @@ script = ExtResource( 18 )
 [node name="InteractionBox" parent="Ship/Carpet" instance=ExtResource( 5 )]
 
 [node name="CollisionShape2D" parent="Ship/Carpet/InteractionBox" index="0"]
-shape = SubResource( 12 )
+shape = SubResource( 8 )
 
 [node name="Couch" type="Sprite" parent="Ship"]
 position = Vector2( 89.0693, 400.671 )
@@ -173,13 +173,13 @@ script = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ship/Couch/KinematicBody2D"]
 position = Vector2( -3.12498, 20 )
-shape = SubResource( 13 )
+shape = SubResource( 9 )
 
 [node name="InteractionBox" parent="Ship/Couch" instance=ExtResource( 5 )]
 
 [node name="CollisionShape2D" parent="Ship/Couch/InteractionBox" index="0"]
 position = Vector2( -2.1875, 45.3125 )
-shape = SubResource( 14 )
+shape = SubResource( 10 )
 
 [node name="VendingM" type="Sprite" parent="Ship"]
 position = Vector2( 245.787, 398.873 )
@@ -191,7 +191,7 @@ script = ExtResource( 20 )
 
 [node name="CollisionShape2D" parent="Ship/VendingM/InteractionBox" index="0"]
 position = Vector2( 1.08093, 9.80988 )
-shape = SubResource( 15 )
+shape = SubResource( 11 )
 
 [node name="Swag" type="Sprite" parent="Ship"]
 position = Vector2( 119.83, 379.049 )
@@ -231,7 +231,7 @@ margin_top = 25.0
 margin_right = 302.0
 margin_bottom = 64.0
 
-[node name="Ok_Key" parent="Ship/Camera2D/Dialog" index="2"]
+[node name="Ok_Key" parent="Ship/Camera2D/Dialog" index="1"]
 position = Vector2( 300.429, 64.1105 )
 frame = 1
 
@@ -242,11 +242,11 @@ script = ExtResource( 19 )
 
 [node name="CollisionShape2D" parent="Ship/TrapDoor/InteractionBox" index="0"]
 position = Vector2( 249.707, 435.493 )
-shape = SubResource( 16 )
+shape = SubResource( 12 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -16.155
+volume_db = -15.0
 autoplay = true
 
 [editable path="Ship/Computer/InteractionBox"]

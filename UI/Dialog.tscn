@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/fonts/dialog_speaker.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/fonts/dialog_message.tres" type="DynamicFont" id=2]
-[ext_resource path="res://assets/selfmade/Dialog_Arrow.png" type="Texture" id=3]
 [ext_resource path="res://UI/Dialog.gd" type="Script" id=4]
 [ext_resource path="res://UI/kb_dark_all.png" type="Texture" id=5]
 
@@ -10,13 +9,13 @@
 atlas = ExtResource( 5 )
 region = Rect2( 16, 80, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 5 )
 region = Rect2( 48, 80, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"frames": [ SubResource( 1 ), SubResource( 3 ) ],
 "loop": true,
 "name": "default",
 "speed": 2.0
@@ -59,12 +58,8 @@ size_flags_vertical = 3
 custom_fonts/normal_font = ExtResource( 2 )
 text = "Because we're circling around the planet for two days now and you stil haven't even selected a landing spot."
 
-[node name="Arrow" type="Sprite" parent="."]
-visible = false
-position = Vector2( 462.455, 64.0975 )
-texture = ExtResource( 3 )
-
 [node name="Ok_Key" type="AnimatedSprite" parent="."]
 position = Vector2( 461.761, 64.256 )
-frames = SubResource( 3 )
+frames = SubResource( 4 )
+frame = 1
 playing = true
