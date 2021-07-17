@@ -1416,7 +1416,7 @@ shape = SubResource( 20 )
 position = Vector2( 36.6657, 425.917 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 29 )
-frame = 2
+frame = 7
 playing = true
 script = ExtResource( 16 )
 
@@ -1507,6 +1507,7 @@ margin_bottom = 49.0
 
 [node name="Ok_Key" parent="Node2D/YSort/Player/Dialog" index="1"]
 position = Vector2( 299.126, 50.9225 )
+frame = 0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
