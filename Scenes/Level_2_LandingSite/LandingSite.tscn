@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://Tilesets/Sci-fi Tileset re-imagined.png" type="Texture" id=1]
 [ext_resource path="res://Tilesets/SCi-fi assets planet one.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Scenes/InteractionBox.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Level_2_LandingSite/Foosball.gd" type="Script" id=16]
 [ext_resource path="res://Sprites/ring.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Intro/Fire.png" type="Texture" id=18]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -1342,6 +1343,33 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 23.6744, 21.1575 )
 
+[sub_resource type="ParticlesMaterial" id=31]
+trail_divisor = 2
+emission_shape = 2
+emission_box_extents = Vector3( 12, 1, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+flatness = 0.5
+gravity = Vector3( 0, -5, 0 )
+angular_velocity_random = 0.06
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = 100.0
+angle_random = 0.5
+
+[sub_resource type="ParticlesMaterial" id=32]
+trail_divisor = 2
+emission_shape = 2
+emission_box_extents = Vector3( 12, 1, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+gravity = Vector3( 0, 150, 0 )
+angular_velocity = 20.0
+angular_velocity_random = 0.06
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle_random = 0.5
+
 [node name="LandingSite" type="Node2D"]
 script = ExtResource( 12 )
 
@@ -1388,7 +1416,7 @@ shape = SubResource( 20 )
 position = Vector2( 36.6657, 425.917 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 29 )
-frame = 7
+frame = 2
 playing = true
 script = ExtResource( 16 )
 
@@ -1408,6 +1436,29 @@ position = Vector2( 242.284, 435.883 )
 
 [node name="Rocket" parent="Node2D/YSort" instance=ExtResource( 8 )]
 position = Vector2( 49.0792, 332.05 )
+
+[node name="Phase_1_Fire" type="Particles2D" parent="Node2D/YSort/Rocket"]
+visible = false
+position = Vector2( 0.420456, 51.2947 )
+z_index = 5
+z_as_relative = false
+process_material = SubResource( 31 )
+texture = ExtResource( 18 )
+
+[node name="Phase_2_Fire" type="Particles2D" parent="Node2D/YSort/Rocket"]
+visible = false
+position = Vector2( 0.529724, 54.5632 )
+z_index = 1
+z_as_relative = false
+amount = 20
+lifetime = 1.5
+preprocess = 1.0
+process_material = SubResource( 32 )
+texture = ExtResource( 18 )
+
+[node name="Engine" type="AudioStreamPlayer2D" parent="Node2D/YSort/Rocket"]
+stream = ExtResource( 3 )
+volume_db = -15.0
 
 [node name="Merchant Stand" parent="Node2D/YSort" instance=ExtResource( 10 )]
 position = Vector2( 142.027, 365.78 )
@@ -1456,18 +1507,11 @@ margin_bottom = 49.0
 
 [node name="Ok_Key" parent="Node2D/YSort/Player/Dialog" index="1"]
 position = Vector2( 299.126, 50.9225 )
-frame = 0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -25.242
 autoplay = true
-
-[node name="DialogStartTimer" type="Timer" parent="."]
-one_shot = true
-autostart = true
-
-[connection signal="timeout" from="DialogStartTimer" to="." method="_on_DialogStartTimer_timeout"]
 
 [editable path="Node2D/Foosball/Foosball/InteractionBox"]
 [editable path="Node2D/YSort/Player/Dialog"]

@@ -90,3 +90,6 @@ func unfreeze(_value = ""):
 
 func disable_interaction():
   interactionArea.disabled = true
+
+func invisible():
+    $Sprite.hide()

@@ -124,7 +124,6 @@ shape = SubResource( 2 )
 [node name="ShipInterior_BG" type="AnimatedSprite" parent="Ship"]
 position = Vector2( 167.61, 407.715 )
 frames = SubResource( 6 )
-frame = 2
 playing = true
 
 [node name="Computer" type="Node2D" parent="Ship"]
@@ -222,7 +221,6 @@ margin_bottom = 64.0
 
 [node name="Ok_Key" parent="Ship/Camera2D/Dialog" index="1"]
 position = Vector2( 300.429, 64.1105 )
-frame = 0
 
 [node name="TrapDoor" type="Node2D" parent="Ship"]
 script = ExtResource( 19 )

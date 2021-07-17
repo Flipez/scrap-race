@@ -12,28 +12,27 @@ export var DIRECTION = Vector2.LEFT
 #  move_and_slide(velocity)
 
 func interact(_player):
-  if StoryState.landingSite == StoryState.landingSiteStates.Start:
-    StoryState.landingSite = StoryState.landingSiteStates.FindScrap
-    DialogController.createDialog([
-      ["Scrat", "Hello, can you tell me where I can find the secret entrance to the bunker?"],
-      ["Merchant", "Why should I know where the secret entrance is?"],
-      ["Scrat", "I assumed you as a merchant do know a lot stuff"],
-      ["Merchant", "Thats true, but my informations are not for free"],
-      ["Merchant", "Bring me some money and maybe I'll tell you."],
-      ["Merchant", "Sell some scrap from your ship if you haven't any"]
-     ])
-  elif StoryState.landingSite == StoryState.landingSiteStates.AskBunker:
-    StoryState.landingSite = StoryState.landingSiteStates.FoundBunker
-    DialogController.createDialog([
-      ["Merchant", "Ok, you got the money."],
-      ["Merchant", "The secret entry to the bunker is in the container behind me"],
-      ["Merchant", "I am wondering how some can not guess this. Totally waste of money."],
-     ])
-  else:
-    DialogController.createDialog([
-      ["Merchant", "You better got me some money if you want answers!"],
-     ])
-  
+  match StoryState.landingSite: 
+    StoryState.landingSiteStates.Start:
+        StoryState.landingSite = StoryState.landingSiteStates.FindScrap
+        DialogController.createDialog([
+        ["Scrat", "Hello, do you sell some fuel?"],
+        ["Merchant", "Hello Stranger, unfortunately not. But I do have some nice sock puppets."],
+        ["Scrat", "No thanks. If you do not sell fuel, maybe you know where I can find some?"],
+        ["Merchant", "Thats true, but my informations are not for free"],
+        ["Merchant", "Bring me something valuable and we'll trade."],
+        ])
+    StoryState.landingSiteStates.AskBunker:
+        StoryState.landingSite = StoryState.landingSiteStates.FoundBunker
+        DialogController.createDialog([
+        ["Merchant", "Well, no treasures but fair enough."],
+        ["Merchant", "There is some fuel in in the container behind me."],
+        ["Merchant", "I am wondering how some can not guess this. Totally waste of money."],
+        ])
+    _:
+        DialogController.createDialog([
+        ["Merchant", "You better got me something if you want answers!"],
+        ])
 
 func _on_Timer_timeout():
   if DIRECTION == Vector2.LEFT:
