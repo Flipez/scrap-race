@@ -1,4 +1,4 @@
 extends Node2D
 
-func _process(_delta):
-  position.x -= 5
+func _process(delta):
+  position.x -= 80 * delta
