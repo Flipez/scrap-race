@@ -20,7 +20,7 @@ Nothing much to explain here:
   * [Trello](https://trello.com)
   * [Pixaki](https://pixaki.com/)
 * Fonts
-  * [OFL](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL) Fonts from [Google Fonts] (https://fonts.google.com/)
+  * [OFL](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL) Fonts from [Google Fonts](https://fonts.google.com/)
 * Sounds & Music
   * Intro "8 Bit Presentation" from [fesliyanstudios.com](https://www.fesliyanstudios.com/royalty-free-music/downloads-c/8-bit-music/6)
   * Level 1/Puzzle 1 from [HumbleBundle - Music & SoundFX 2 07/2021](https://www.humblebundle.com/software/music-sound-effects-for-games-files-content)
