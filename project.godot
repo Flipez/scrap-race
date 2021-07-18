@@ -18,7 +18,6 @@ config/icon="res://icon.png"
 
 DialogController="*res://Helpers/DialogController.gd"
 StoryState="*res://Helpers/StoryState.gd"
-InventoryController="*res://Helpers/InventoryController.gd"
 
 [display]
 

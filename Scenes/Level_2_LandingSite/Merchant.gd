@@ -22,21 +22,21 @@ func interact(_player):
         StoryState.landingSite = StoryState.landingSiteStates.FindScrap
         DialogController.createDialog([
         ["Scrat", "Hello, do you sell some fuel?"],
-        ["Merchant", "Hello Stranger, unfortunately not. But I do have some nice sock puppets."],
+        ["Travelling Merchant", "Hello Stranger, unfortunately not. But I do have some nice sock puppets."],
         ["Scrat", "No thanks. If you do not sell fuel, maybe you know where I can find some?"],
-        ["Merchant", "Thats true, but my informations are not for free"],
-        ["Merchant", "Bring me something valuable and we'll trade."],
+        ["Travelling Merchant", "Thats true, but my informations are not for free"],
+        ["Travelling Merchant", "Bring me something valuable and we'll trade."],
         ])
     StoryState.landingSiteStates.AskBunker:
         StoryState.landingSite = StoryState.landingSiteStates.FoundBunker
         DialogController.createDialog([
-        ["Merchant", "Well, no treasures but fair enough."],
-        ["Merchant", "There is some fuel in in the container behind me."],
-        ["Merchant", "I am wondering how some can not guess this. Totally waste of money."],
+        ["Travelling Merchant", "Well, no treasures but fair enough."],
+        ["Travelling Merchant", "There is some fuel in in the container behind me."],
+        ["Travelling Merchant", "I am wondering how some can not guess this. Totally waste of money."],
         ], self, "tradeJuxBox")
     _:
         DialogController.createDialog([
-        ["Merchant", "You better got me something if you want answers!"],
+        ["Travelling Merchant", "You better got me something if you want answers!"],
         ])
 
 func _on_Timer_timeout():

@@ -1481,7 +1481,7 @@ shape = SubResource( 20 )
 position = Vector2( 36.6657, 428.352 )
 scale = Vector2( 0.65, 0.5 )
 frames = SubResource( 29 )
-frame = 5
+frame = 3
 playing = true
 script = ExtResource( 16 )
 
@@ -1596,7 +1596,6 @@ margin_bottom = 49.0
 
 [node name="Ok_Key" parent="Node2D/YSort/Player/Dialog" index="1"]
 position = Vector2( 299.126, 50.9225 )
-frame = 0
 
 [node name="InventoryUI" parent="Node2D/YSort/Player" instance=ExtResource( 19 )]
 visible = false

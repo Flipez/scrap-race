@@ -8,7 +8,7 @@ var dialog = [
     ['???', 'SCRAT!!!'],
     ['Scrat', 'Huh?'],
     ['???', 'WAKE UP!!!'],
-    ['Scrat', "Why? It's like...oh...well...it's too early too stand up."],
+    ['Scrat', "Why? It's like...oh...well...it's too early to stand up."],
     ['???', "We're circling around the planet for two days now and you still haven't even selected a landing spot."],
     ['???', "We're way behind schedule. You know that you'll loose your treasure hunter licence if you don't..."],
     ['Scrat', "Ok, ok mom. I got it. Wake me up tomorrow and we'll dig up some \"treasure\" on this junkyard for the boss."],
