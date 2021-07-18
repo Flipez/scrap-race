@@ -91,6 +91,7 @@ __meta__ = {
 [node name="Ok_Key" type="AnimatedSprite" parent="Player/HUD"]
 position = Vector2( 201.422, 186.15 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="SpaceShip" type="Sprite" parent="Player"]
@@ -138,6 +139,7 @@ margin_bottom = 63.0
 
 [node name="Ok_Key" parent="Player/Dialog" index="1"]
 position = Vector2( 301.774, 63.7841 )
+frame = 0
 
 [node name="Space" type="ParallaxBackground" parent="."]
 

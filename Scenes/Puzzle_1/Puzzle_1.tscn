@@ -1,15 +1,24 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://UI/Dialog.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Puzzle_1/Puzzle_1.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Puzzles/puzzle_1.png" type="Texture" id=3]
 [ext_resource path="res://Fonts/dialog_message.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Sounds/FX/moving metal contruction.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sprites/Puzzles/Box.png" type="Texture" id=6]
 
 [node name="Puzzle_1" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Box" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -84,6 +93,7 @@ __meta__ = {
 }
 
 [node name="Light" type="ColorRect" parent="."]
+visible = false
 margin_right = 320.0
 margin_bottom = 180.0
 color = Color( 1, 0.976471, 0.843137, 0.247059 )
@@ -92,7 +102,6 @@ __meta__ = {
 }
 
 [node name="Dialog" parent="." instance=ExtResource( 1 )]
-visible = true
 margin_left = 0.0
 margin_top = 92.0
 margin_right = 320.0

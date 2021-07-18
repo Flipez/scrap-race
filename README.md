@@ -8,7 +8,7 @@ We did some smaller games with Godot before but it's the first time we work toge
 
 # Controls
 
-Nothing much to explain here: 
+Not much to explain here: 
 * *Move* with Arrow Keys or `WASD`
 * *Interact* with `F`
 
