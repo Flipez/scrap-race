@@ -999,25 +999,25 @@ position = Vector2( 298.627, 52.063 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Node2D/YSort"]
 position = Vector2( 22.7785, 386.969 )
 frames = SubResource( 23 )
-frame = 3
+frame = 7
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Node2D/YSort"]
 position = Vector2( -160.784, 399.469 )
 frames = SubResource( 23 )
-frame = 4
 playing = true
 offset = Vector2( 265.618, -11.9054 )
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Node2D/YSort"]
 position = Vector2( 298.517, 387.861 )
 frames = SubResource( 23 )
+frame = 4
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Node2D/YSort"]
 position = Vector2( 392.919, 385.78 )
 frames = SubResource( 23 )
-frame = 6
+frame = 2
 playing = true
 
 [node name="Chest" type="StaticBody2D" parent="Node2D/YSort"]

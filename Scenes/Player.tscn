@@ -88,7 +88,7 @@ tracks/2/keys = {
 extents = Vector2( 8.39445, 1.95644 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 7.96487, 3.49791 )
+extents = Vector2( 9.37855, 5.40289 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 0, 7.62939e-06 )
@@ -118,7 +118,7 @@ wait_time = 0.5
 one_shot = true
 
 [node name="InteractionArea" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0.325806, 0.113401 )
+position = Vector2( 2.00518, -1.65437 )
 shape = SubResource( 4 )
 disabled = true
 

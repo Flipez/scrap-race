@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Sprites/Spaceship.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Intro/Stars.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/Outro/Player.gd" type="Script" id=5]
 [ext_resource path="res://Fonts/dialog_message.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Fonts/Qahiri-Regular.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Sounds/FX/intro_ambience.mp3" type="AudioStream" id=8]
 
 [sub_resource type="ParticlesMaterial" id=1]
 trail_divisor = 2
@@ -93,7 +94,11 @@ margin_right = 329.0
 margin_bottom = 88.0
 custom_fonts/font = SubResource( 2 )
 text = "Scrap Race"
-percent_visible = -0.111111
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -15.0
+autoplay = true

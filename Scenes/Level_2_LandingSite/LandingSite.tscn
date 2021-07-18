@@ -1416,7 +1416,7 @@ shape = SubResource( 20 )
 position = Vector2( 36.6657, 425.917 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 29 )
-frame = 7
+frame = 3
 playing = true
 script = ExtResource( 16 )
 
@@ -1474,7 +1474,7 @@ autoplay = true
 position = Vector2( 386.545, 417.777 )
 
 [node name="Player" parent="Node2D/YSort" instance=ExtResource( 9 )]
-position = Vector2( 90.844, 412.239 )
+position = Vector2( 53.6763, 389.875 )
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Node2D/YSort/Player"]

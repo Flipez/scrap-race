@@ -20,7 +20,7 @@ var outro_dialog = [
 ]
 
 func _ready():
-  self.connect('ready_for_takeoff', self, 'ready_for_takeoff')
+  var _return = self.connect('ready_for_takeoff', self, 'ready_for_takeoff')
   if StoryState.landingSite == StoryState.landingSiteStates.Start:
     DialogController.createDialog(start_dialog)
     
@@ -38,5 +38,5 @@ func ready_for_takeoff():
     $Node2D/YSort/Rocket/Phase_1_Fire.hide()
     $Node2D/YSort/Rocket.take_off()
     yield(get_tree().create_timer(2), "timeout")
-    get_tree().change_scene("res://Scenes/Outro/Outro.tscn")
+    var _return = get_tree().change_scene("res://Scenes/Outro/Outro.tscn")
 

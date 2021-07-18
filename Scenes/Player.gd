@@ -51,11 +51,11 @@ func move_state(delta):
   if input_vector.x > 0:
     playerSprite.flip_h = false
     playerSprite.offset.x = 20
-    interactionArea.position.x = 7
+    interactionArea.position.x = 2
   elif input_vector.x < 0:
     playerSprite.flip_h = true
     playerSprite.offset.x = -20
-    interactionArea.position.x = -7
+    interactionArea.position.x = -18
   
   if Input.is_action_just_pressed("ui_interact") && state == MOVE:
     state = INTERACT
