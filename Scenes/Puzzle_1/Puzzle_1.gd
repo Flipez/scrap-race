@@ -6,7 +6,9 @@ signal engine_on
 signal next_try
 signal done
 signal leave_scene
+signal puzzle_part2
 
+var replacement_found = false
 var part1 = [
     ['Scrat', "Wow...it's dark in here. M.O.M. turn on the light!"],
     ['M.O.M.', "I can't. I just told you the other day for the tenth time that you have to check the cables!"],
@@ -44,6 +46,7 @@ func _ready():
     self.connect("next_try", self, "next_try")
     self.connect("done", self, "puzzle_completed")
     self.connect("leave_scene", self, "switch_back")
+    self.connect("puzzle_part2", self, "puzzle_part2")
     DialogController.createDialog(part1, self, 'reveal_puzzle')
     
 func reveal():
@@ -60,16 +63,19 @@ func _process(_event):
     if not puzzle_unlocked:
         return
         
-    if Input.is_action_just_pressed("ui_up"): # W
+    if Input.is_action_just_pressed("ui_up") and not replacement_found: # W
         puzzle_unlocked = false
-        DialogController.createDialog([["M.O.M.", "That's the one we can use, not the one we need to replace!"]], self, 'next_try')
+        DialogController.createDialog([["M.O.M.", "Good, that's the one we can use. Now replace the light cable. Remember. The bottom right most plug."]], self, 'puzzle_part2')
     if Input.is_action_just_pressed("ui_left"): # A
         puzzle_unlocked = false
-        match attempts:
-            1: DialogController.createDialog([["M.O.M.", "Wow. You made it on the first try. Maybe you're a genius after all."]], self, 'done')
-            2: DialogController.createDialog([["M.O.M.", "Well. Second try worked out. Fair enough."]], self, 'done')
-            3: DialogController.createDialog([["M.O.M.", "All good things come in threes I guess."]], self, 'done')
-            _: DialogController.createDialog([["M.O.M.", "You should really pay more attention to these tasks."]], self, 'done')
+        if replacement_found:
+            match attempts:
+                1: DialogController.createDialog([["M.O.M.", "Wow. You made it on the first try. Maybe you're a genius after all."]], self, 'done')
+                2: DialogController.createDialog([["M.O.M.", "Well. Second try worked out. Fair enough."]], self, 'done')
+                3: DialogController.createDialog([["M.O.M.", "All good things come in threes I guess."]], self, 'done')
+                _: DialogController.createDialog([["M.O.M.", "You should really pay more attention to these tasks."]], self, 'done')
+        else:
+            DialogController.createDialog([["M.O.M.", "You have to unplug the replacement cable first. The one that is already loose on one end!"]], self, 'next_try')
     if Input.is_action_just_pressed("ui_right"): # D
         puzzle_unlocked = false
         $Darkness.show()
@@ -95,3 +101,7 @@ func puzzle_completed():
 func switch_back():
     StoryState.intro = StoryState.Intro.Found
     get_tree().change_scene("res://Scenes/Level_1_Ship/ShipInterior.tscn")
+
+func puzzle_part2():
+    replacement_found = true
+    puzzle_unlocked = true

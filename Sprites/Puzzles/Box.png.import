@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/puzzle_1.png-baa3b26649bc8bdb913cb134e9deee37.stex"
+path="res://.import/Box.png-6b43436af6d7f931076067976f5a6f32.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Puzzles/puzzle_1.png"
-dest_files=[ "res://.import/puzzle_1.png-baa3b26649bc8bdb913cb134e9deee37.stex" ]
+source_file="res://Sprites/Puzzles/Box.png"
+dest_files=[ "res://.import/Box.png-6b43436af6d7f931076067976f5a6f32.stex" ]
 
 [params]
 
