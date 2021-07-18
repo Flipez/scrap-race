@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="SpaceIndie"
-run/main_scene="res://Scenes/Intro/Intro.tscn"
+run/main_scene="res://Scenes/Logo/Logo.tscn"
 config/icon="res://icon.png"
 
 [autoload]
