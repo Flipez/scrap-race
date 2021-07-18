@@ -9,9 +9,12 @@ export var ACCELERATION = 500
 export var MAX_SPEED = 10
 export var DIRECTION = Vector2.LEFT
 
-#func _physics_process(delta):
-#  velocity = velocity.move_toward(DIRECTION * MAX_SPEED, ACCELERATION * delta)
-#  move_and_slide(velocity)
+var playerInSight = false
+
+func _physics_process(delta):
+  if !playerInSight:
+    velocity = velocity.move_toward(DIRECTION * MAX_SPEED, ACCELERATION * delta)
+    var _return = move_and_slide(velocity)
 
 func interact(_player):
   match StoryState.landingSite: 
@@ -46,3 +49,15 @@ func _on_Timer_timeout():
 
 func tradeJuxBox():
   emit_signal("tradeJuxBox")
+
+
+func _on_PlayerDetection_area_entered(area):
+  playerInSight = true
+  $Timer.paused = true
+  $AnimatedSprite.play("idle")
+
+
+func _on_PlayerDetection_area_exited(area):
+  playerInSight = false
+  $Timer.paused = false
+  $AnimatedSprite.play("default")

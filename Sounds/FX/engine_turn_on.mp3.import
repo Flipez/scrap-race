@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/engine_turn_on.mp3-b296ba8c6a6f2b39e9a7f86f531b0798.mp3str"
+
+[deps]
+
+source_file="res://Sounds/FX/engine_turn_on.mp3"
+dest_files=[ "res://.import/engine_turn_on.mp3-b296ba8c6a6f2b39e9a7f86f531b0798.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -10,3 +10,10 @@ enum dungeonStates {PuzzleUnsolved, SignRead, PuzzleSolved, ChestOpened}
 var dungeonState = dungeonStates.PuzzleUnsolved
 
 var barrelJokesPosition = 0
+
+var playerSpeedMultiplicator = 1
+
+enum consoleStates { Missing, Found, Complete}
+var consoleState = consoleStates.Missing
+
+var sodaStandClosed = false

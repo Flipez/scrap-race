@@ -33,7 +33,7 @@ func ready_for_takeoff():
     $Node2D/YSort/Rocket/Engine.play()
     $Node2D/YSort/Rocket/Phase_1_Fire.show()
     $Node2D/YSort/Player.freeze(1,2,3)
-    yield(get_tree().create_timer(3), "timeout")
+    yield(get_tree().create_timer(6), "timeout")
     $Node2D/YSort/Rocket/Phase_2_Fire.show()
     $Node2D/YSort/Rocket/Phase_1_Fire.hide()
     $Node2D/YSort/Rocket.take_off()

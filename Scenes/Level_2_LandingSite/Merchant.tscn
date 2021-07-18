@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Sprites/Merchant/walk.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Level_2_LandingSite/Merchant.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/InteractionBox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/Merchant/idle.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
@@ -35,13 +36,37 @@ region = Rect2( 192, 0, 64, 64 )
 atlas = ExtResource( 1 )
 region = Rect2( 256, 0, 64, 64 )
 
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 4 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 4 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 4 )
+region = Rect2( 192, 0, 64, 64 )
+
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
 "frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 20.7041, 22.1673 )
 
 [node name="Merchant" type="KinematicBody2D"]
 position = Vector2( 94.1417, 292.133 )
@@ -65,7 +90,6 @@ shape = SubResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -1.31104, -12.9229 )
 frames = SubResource( 9 )
-frame = 2
 playing = true
 flip_h = true
 
@@ -73,6 +97,16 @@ flip_h = true
 wait_time = 10.0
 autostart = true
 
+[node name="PlayerDetection" type="Area2D" parent="."]
+collision_layer = 512
+collision_mask = 512
+
+[node name="DetectionArea" type="CollisionShape2D" parent="PlayerDetection"]
+position = Vector2( -1.94454, -9.54593 )
+shape = SubResource( 10 )
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="area_entered" from="PlayerDetection" to="." method="_on_PlayerDetection_area_entered"]
+[connection signal="area_exited" from="PlayerDetection" to="." method="_on_PlayerDetection_area_exited"]
 
 [editable path="InteractionBox"]

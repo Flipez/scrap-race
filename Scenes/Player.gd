@@ -41,7 +41,7 @@ func move_state(delta):
 
   if input_vector != Vector2.ZERO:
     animationPlayer.play("RunRight")
-    velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
+    velocity = velocity.move_toward(input_vector * MAX_SPEED * StoryState.playerSpeedMultiplicator, ACCELERATION * delta)
   else:
     animationPlayer.play("Idle")
     velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)

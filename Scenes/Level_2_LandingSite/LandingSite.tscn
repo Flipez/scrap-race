@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://Tilesets/Sci-fi Tileset re-imagined.png" type="Texture" id=1]
 [ext_resource path="res://Tilesets/SCi-fi assets planet one.png" type="Texture" id=2]
@@ -19,6 +19,13 @@
 [ext_resource path="res://Sprites/ring.png" type="Texture" id=17]
 [ext_resource path="res://Sprites/Intro/Fire.png" type="Texture" id=18]
 [ext_resource path="res://UI/InventoryUI.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Sprites/Puzzles/console.png" type="Texture" id=20]
+[ext_resource path="res://Scenes/Level_2_LandingSite/Console.gd" type="Script" id=21]
+[ext_resource path="res://Scenes/Level_2_LandingSite/SodaStand.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Sounds/FX/engine_turn_on.mp3" type="AudioStream" id=23]
+[ext_resource path="res://Scenes/Level_2_LandingSite/FlowerPot.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Level_2_LandingSite/SodaSign.gd" type="Script" id=25]
+[ext_resource path="res://Scenes/Level_2_LandingSite/Bike.gd" type="Script" id=26]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -149,6 +156,9 @@ points = PoolVector2Array( 256, 16, 0, 16, 0, 0, 256, 0 )
 7/shape_one_way_margin = 0.0
 7/shapes = [  ]
 7/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=35]
+extents = Vector2( 11.655, 10 )
 
 [sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -1312,6 +1322,12 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 20/shapes = [  ]
 20/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=34]
+extents = Vector2( 8.17303, 11.473 )
+
+[sub_resource type="RectangleShape2D" id=33]
+extents = Vector2( 19.1366, 10.9812 )
+
 [sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 15.8037, 11.3707 )
 
@@ -1401,13 +1417,20 @@ tile_data = PoolIntArray( 851968, 4, 0, 851984, 4, 0, 917504, 4, 0, 917520, 4, 0
 position = Vector2( 175.491, 371.497 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 14 )
+script = ExtResource( 26 )
+
+[node name="InteractionBox" parent="Node2D/Bike" instance=ExtResource( 15 )]
+
+[node name="CollisionShape2D" parent="Node2D/Bike/InteractionBox" index="0"]
+position = Vector2( 2.35703, 4.47836 )
+shape = SubResource( 35 )
 
 [node name="TileMap" type="TileMap" parent="Node2D"]
 tile_set = SubResource( 18 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 1179671, 18, 0, 1376267, 27, 0, 1376279, 13, 0, 1441811, 32, 0, 1441817, 34, 0, 1441818, 46, 0, 1441819, 49, 0, 1507328, 11, 0, 1507333, 11, 0, 1507334, 11, 0, 1507338, 51, 0, 1507339, 28, 0, 1507340, 11, 0, 1507341, 11, 0, 1507342, 11, 0, 1507343, 11, 0, 1507344, 11, 0, 1507345, 11, 0, 1507346, 29, 0, 1507353, 46, 0, 1507354, 46, 0, 1507355, 46, 0, 1572864, 11, 0, 1572894, 11, 0, 1638400, 11, 0, 1638430, 11, 0, 1703936, 11, 0, 1703966, 11, 0, 1769472, 11, 0, 1769473, 25, 0, 1769479, 24, 0, 1769484, 25, 0, 1769491, 23, 0, 1769502, 11, 0, 1835008, 45, 0, 1835012, 48, 0, 1835013, 45, 0, 1835014, 48, 0, 1835018, 44, 0, 1835019, 48, 0, 1835023, 40, 0, 1835024, 45, 0, 1835025, 46, 0, 1835026, 47, 0, 1835027, 46, 0, 1835028, 45, 0, 1835029, 49, 0, 1835033, 39, 0, 1835035, 45, 0, 1835036, 46, 0 )
+tile_data = PoolIntArray( 1179671, 18, 0, 1376267, 27, 0, 1376279, 13, 0, 1441811, 32, 0, 1441817, 34, 0, 1441818, 46, 0, 1441819, 49, 0, 1507328, 11, 0, 1507333, 11, 0, 1507334, 11, 0, 1507338, 51, 0, 1507339, 28, 0, 1507340, 11, 0, 1507341, 11, 0, 1507342, 11, 0, 1507343, 11, 0, 1507344, 11, 0, 1507345, 11, 0, 1507346, 29, 0, 1507353, 46, 0, 1507354, 46, 0, 1507355, 46, 0, 1769473, 25, 0, 1769479, 24, 0, 1769484, 25, 0, 1769491, 23, 0, 1835008, 45, 0, 1835012, 48, 0, 1835013, 45, 0, 1835014, 48, 0, 1835018, 44, 0, 1835019, 48, 0, 1835023, 40, 0, 1835024, 45, 0, 1835025, 46, 0, 1835026, 47, 0, 1835027, 46, 0, 1835028, 45, 0, 1835029, 49, 0, 1835033, 39, 0, 1835035, 45, 0, 1835036, 46, 0 )
 
 [node name="Details" type="TileMap" parent="Node2D"]
 tile_set = SubResource( 19 )
@@ -1421,6 +1444,33 @@ position = Vector2( 96.0138, 376.109 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 17 )
 
+[node name="SodaStand" parent="Node2D" instance=ExtResource( 22 )]
+position = Vector2( 344.833, 369.92 )
+
+[node name="SodaSign" type="Node2D" parent="Node2D"]
+position = Vector2( 374.432, 367.872 )
+script = ExtResource( 25 )
+
+[node name="InteractionBox" parent="Node2D/SodaSign" instance=ExtResource( 15 )]
+
+[node name="CollisionShape2D" parent="Node2D/SodaSign/InteractionBox" index="0"]
+position = Vector2( 2.20486, 4.09476 )
+shape = SubResource( 34 )
+
+[node name="Console" type="Node2D" parent="Node2D"]
+position = Vector2( 480.845, 439.362 )
+rotation = -0.495996
+scale = Vector2( 0.25, 0.25 )
+script = ExtResource( 21 )
+
+[node name="Sprite" type="Sprite" parent="Node2D/Console"]
+texture = ExtResource( 20 )
+
+[node name="InteractionBox" parent="Node2D/Console" instance=ExtResource( 15 )]
+
+[node name="CollisionShape2D" parent="Node2D/Console/InteractionBox" index="0"]
+shape = SubResource( 33 )
+
 [node name="Foosball" type="StaticBody2D" parent="Node2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Foosball"]
@@ -1431,7 +1481,7 @@ shape = SubResource( 20 )
 position = Vector2( 36.6657, 428.352 )
 scale = Vector2( 0.65, 0.5 )
 frames = SubResource( 29 )
-frame = 7
+frame = 5
 playing = true
 script = ExtResource( 16 )
 
@@ -1440,6 +1490,30 @@ script = ExtResource( 16 )
 [node name="CollisionShape2D" parent="Node2D/Foosball/Foosball/InteractionBox" index="0"]
 position = Vector2( 0.943878, 16.5178 )
 shape = SubResource( 30 )
+
+[node name="FlowerPot" parent="Node2D" instance=ExtResource( 24 )]
+position = Vector2( 487.089, 439.999 )
+
+[node name="FlowerPot2" parent="Node2D" instance=ExtResource( 24 )]
+position = Vector2( 487.089, 423.391 )
+
+[node name="FlowerPot3" parent="Node2D" instance=ExtResource( 24 )]
+position = Vector2( 487.089, 407.414 )
+
+[node name="FlowerPot4" parent="Node2D" instance=ExtResource( 24 )]
+position = Vector2( 487.089, 390.386 )
+
+[node name="FlowerPot5" parent="Node2D" instance=ExtResource( 24 )]
+position = Vector2( 7.85924, 439.954 )
+
+[node name="FlowerPot6" parent="Node2D" instance=ExtResource( 24 )]
+position = Vector2( 7.85924, 423.347 )
+
+[node name="FlowerPot7" parent="Node2D" instance=ExtResource( 24 )]
+position = Vector2( 7.85924, 407.37 )
+
+[node name="FlowerPot8" parent="Node2D" instance=ExtResource( 24 )]
+position = Vector2( 7.85924, 390.342 )
 
 [node name="YSort" type="Node2D" parent="Node2D"]
 
@@ -1472,7 +1546,7 @@ process_material = SubResource( 32 )
 texture = ExtResource( 18 )
 
 [node name="Engine" type="AudioStreamPlayer2D" parent="Node2D/YSort/Rocket"]
-stream = ExtResource( 3 )
+stream = ExtResource( 23 )
 volume_db = -15.0
 
 [node name="Merchant Stand" parent="Node2D/YSort" instance=ExtResource( 10 )]
@@ -1532,8 +1606,14 @@ stream = ExtResource( 4 )
 volume_db = -25.242
 autoplay = true
 
+[connection signal="sodaBought" from="Node2D/SodaStand" to="Node2D/YSort/Player/InventoryUI" method="_on_SodaStand_sodaBought"]
+[connection signal="consoleFound" from="Node2D/Console" to="Node2D/YSort/Player/InventoryUI" method="_on_Console_consoleFound"]
 [connection signal="tradeJuxBox" from="Node2D/YSort/Merchant" to="Node2D/YSort/Player/InventoryUI" method="_on_Merchant_tradeJuxBox"]
 [connection signal="foundJuxBox" from="Node2D/YSort/Rocket" to="Node2D/YSort/Player/InventoryUI" method="_on_Rocket_foundJuxBox"]
+[connection signal="puzzleSolved" from="Node2D/YSort/Merchant Stand" to="Node2D/YSort/Player/InventoryUI" method="_on_Merchant_Stand_puzzleSolved"]
 
+[editable path="Node2D/Bike/InteractionBox"]
+[editable path="Node2D/SodaSign/InteractionBox"]
+[editable path="Node2D/Console/InteractionBox"]
 [editable path="Node2D/Foosball/Foosball/InteractionBox"]
 [editable path="Node2D/YSort/Player/Dialog"]
