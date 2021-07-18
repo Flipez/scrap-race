@@ -18,7 +18,7 @@ Nothing much to explain here:
   * [Godot 3.3](https://godotengine.org/)
   * [Aseprite](https://www.aseprite.org/)
   * [Trello](https://trello.com)
-  * Tablet App?
+  * [Pixaki](https://pixaki.com/)
 * Fonts
   * [OFL](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL) Fonts from [Google Fonts] (https://fonts.google.com/)
 * Sounds & Music
@@ -26,7 +26,7 @@ Nothing much to explain here:
   * Level 1/Puzzle 1 from [HumbleBundle - Music & SoundFX 2 07/2021](https://www.humblebundle.com/software/music-sound-effects-for-games-files-content)
 * Sprites
   * Player "Buck Borris" from [penusbmic](https://penusbmic.itch.io/super-ginger-hero)
-  * Intro, Level 1, Puzzle 1 - Selfmade (A big thanks to juljul for helping with these)
+  * Intro, Level 1, Puzzle 1, Rocket, Bicycle, Switch, Decorations - Selfmade (A big thanks to juljul for helping with these)
   * Level 2 from [penusbmic](https://penusbmic.itch.io/)
-  * Puzzle 2 - TODO
-  * F-Button - TODO
+  * Puzzle 2 from [0x72](https://0x72.itch.io/)
+  * F-Button - [vryell](https://vryell.itch.io/)
