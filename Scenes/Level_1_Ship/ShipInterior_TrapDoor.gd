@@ -3,7 +3,7 @@ extends Node2D
 signal finish_scene
 
 func _ready():
-    self.connect("finish_scene", self, "_switch_scene")
+    var _return = self.connect("finish_scene", self, "_switch_scene")
 
 func interact(_player):
     if StoryState.intro == StoryState.Intro.Start:
@@ -13,4 +13,4 @@ func interact(_player):
     DialogController.createDialog([['Scrat', "Here we go!"]], self, 'finish_scene')
     
 func _switch_scene():    
-    get_tree().change_scene("res://Scenes/Puzzle_1/Puzzle_1.tscn")
+    var _return = get_tree().change_scene("res://Scenes/Puzzle_1/Puzzle_1.tscn")

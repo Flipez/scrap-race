@@ -37,6 +37,7 @@ func ready_for_takeoff():
     $Node2D/YSort/Rocket/Phase_2_Fire.show()
     $Node2D/YSort/Rocket/Phase_1_Fire.hide()
     $Node2D/YSort/Rocket.take_off()
+    $Node2D/YSort/Rocket/Fire.play()
     yield(get_tree().create_timer(2), "timeout")
     var _return = get_tree().change_scene("res://Scenes/Outro/Outro.tscn")
 

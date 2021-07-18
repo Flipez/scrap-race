@@ -11,7 +11,7 @@ var outro = [
 ]
 
 func _ready():
-    self.connect('landing', self, 'landing')
+    var _return = self.connect('landing', self, 'landing')
     match StoryState.intro:
         StoryState.Intro.Start:
             DialogController.createDialog([['Tutorial', 'You can move with the Arrow Keys (or WASD) and interact with [F]']])
@@ -22,4 +22,4 @@ func landing():
     $Ship.landing = true
     $Ship/Player.freeze(1,2,3)
     yield(get_tree().create_timer(3), "timeout")
-    get_tree().change_scene("res://Scenes/Landing/Landing.tscn")
+    var _return = get_tree().change_scene("res://Scenes/Landing/Landing.tscn")

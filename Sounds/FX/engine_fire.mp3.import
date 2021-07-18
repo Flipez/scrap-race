@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/engine_fire.mp3-42dae13b995678e860ccb333e98e3acc.mp3str"
+
+[deps]
+
+source_file="res://Sounds/FX/engine_fire.mp3"
+dest_files=[ "res://.import/engine_fire.mp3-42dae13b995678e860ccb333e98e3acc.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
