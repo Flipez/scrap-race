@@ -40,3 +40,7 @@ func ready_for_takeoff():
     yield(get_tree().create_timer(2), "timeout")
     var _return = get_tree().change_scene("res://Scenes/Outro/Outro.tscn")
 
+
+
+func _on_LandingSite_trade_juxbox():
+  pass # Replace with function body.

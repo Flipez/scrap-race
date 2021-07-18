@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal tradeJuxBox
+
 var velocity = Vector2.ZERO
 
 export var FRICTION = 500
@@ -28,7 +30,7 @@ func interact(_player):
         ["Merchant", "Well, no treasures but fair enough."],
         ["Merchant", "There is some fuel in in the container behind me."],
         ["Merchant", "I am wondering how some can not guess this. Totally waste of money."],
-        ])
+        ], self, "tradeJuxBox")
     _:
         DialogController.createDialog([
         ["Merchant", "You better got me something if you want answers!"],
@@ -41,3 +43,6 @@ func _on_Timer_timeout():
   else:
     DIRECTION = Vector2.LEFT
     $AnimatedSprite.flip_h = true
+
+func tradeJuxBox():
+  emit_signal("tradeJuxBox")

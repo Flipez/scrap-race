@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Tilesets/Sci-fi Tileset re-imagined.png" type="Texture" id=1]
 [ext_resource path="res://Tilesets/0x72_16x16DungeonTileset.v4.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Scenes/Puzzle_2/PuzzleWall1and3.gd" type="Script" id=13]
 [ext_resource path="res://Sounds/FX/dungeon_ambience.mp3" type="AudioStream" id=14]
 [ext_resource path="res://Scenes/Puzzle_2/Dungeon.gd" type="Script" id=15]
+[ext_resource path="res://UI/InventoryUI.tscn" type="PackedScene" id=16]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 32, 0, 32, 0, 0, 16, 0 )
@@ -946,7 +947,7 @@ tile_set = SubResource( 11 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 852016, 4, 0, 917552, 4, 0, 983088, 4, 0, 1048624, 4, 0, 1114160, 4, 0, 1179696, 4, 0, 1245232, 4, 0, 1310768, 4, 0, 1376304, 3, 0, 1507328, 2, 0, 1507331, 1, 0, 1507332, 1, 0, 1507333, 2, 0, 1507336, 2, 0, 1507339, 2, 0, 1507342, 2, 0, 1507345, 2, 0, 1507348, 2, 0, 1507351, 2, 0, 1507376, 2, 0, 1572864, 2, 0, 1572867, 0, 0, 1572869, 2, 0, 1572872, 2, 0, 1572873, 4, 0, 1572874, 5, 0, 1572875, 2, 0, 1572878, 2, 0, 1572879, 4, 0, 1572880, 5, 0, 1572881, 2, 0, 1572884, 2, 0, 1572887, 2, 0, 1572912, 2, 0, 1638400, 2, 0, 1638405, 2, 0, 1638408, 2, 0, 1638411, 2, 0, 1638412, 4, 0, 1638414, 2, 0, 1638416, 5, 0, 1638417, 2, 0, 1638420, 2, 0, 1638423, 2, 0, 1638424, 3, 0, 1638448, 2, 0, 1703936, 10, 0, 1703937, 7, 0, 1703938, 7, 0, 1703939, 14, 0, 1703940, 17, 0, 1703941, 7, 0, 1703942, 7, 0, 1703943, 7, 0, 1703944, 7, 0, 1703945, 7, 0, 1703946, 7, 0, 1703947, 7, 0, 1703948, 7, 0, 1703949, 7, 0, 1703950, 7, 0, 1703951, 7, 0, 1703952, 7, 0, 1703953, 7, 0, 1703954, 7, 0, 1703955, 7, 0, 1703956, 7, 0, 1703957, 7, 0, 1703958, 7, 0, 1703959, 7, 0, 1703960, 8, 0, 1703961, 10, 0, 1703984, 2, 0, 1769472, 9, 0, 1769473, 27, 0, 1769474, 27, 0, 1769475, 22, 0, 1769476, 25, 0, 1769477, 27, 0, 1769478, 27, 0, 1769479, 27, 0, 1769480, 14, 0, 1769481, 16, 0, 1769482, 18, 0, 1769483, 27, 0, 1769484, 27, 0, 1769485, 27, 0, 1769486, 27, 0, 1769487, 27, 0, 1769488, 27, 0, 1769489, 27, 0, 1769490, 14, 0, 1769491, 15, 0, 1769492, 16, 0, 1769493, 17, 0, 1769494, 27, 0, 1769495, 27, 0, 1769496, 27, 0, 1769497, 9, 0, 1769520, 2, 0, 1835009, 27, 0, 1835010, 27, 0, 1835011, 27, 0, 1835012, 27, 0, 1835013, 27, 0, 1835014, 27, 0, 1835015, 27, 0, 1835016, 22, 0, 1835017, 21, 0, 1835018, 18, 0, 1835019, 27, 0, 1835020, 27, 0, 1835021, 27, 0, 1835022, 27, 0, 1835023, 27, 0, 1835024, 27, 0, 1835025, 27, 0, 1835026, 22, 0, 1835027, 24, 0, 1835028, 23, 0, 1835029, 25, 0, 1835030, 27, 0, 1835031, 27, 0, 1835032, 27, 0, 1835033, 9, 0, 1835056, 4, 0, 1900544, 2, 0, 1900547, 2, 0, 1900550, 2, 0, 1900553, 2, 0, 1900556, 2, 0, 1900559, 2, 0, 1900562, 2, 0, 1900565, 2, 0, 1900567, 2, 0 )
+tile_data = PoolIntArray( 1507328, 2, 0, 1507331, 1, 0, 1507332, 1, 0, 1507333, 2, 0, 1507336, 2, 0, 1507339, 2, 0, 1507342, 2, 0, 1507345, 2, 0, 1507348, 2, 0, 1507351, 2, 0, 1572864, 2, 0, 1572867, 0, 0, 1572869, 2, 0, 1572872, 2, 0, 1572873, 4, 0, 1572874, 5, 0, 1572875, 2, 0, 1572878, 2, 0, 1572879, 4, 0, 1572880, 5, 0, 1572881, 2, 0, 1572884, 2, 0, 1572887, 2, 0, 1638400, 2, 0, 1638405, 2, 0, 1638408, 2, 0, 1638411, 2, 0, 1638412, 4, 0, 1638414, 2, 0, 1638416, 5, 0, 1638417, 2, 0, 1638420, 2, 0, 1638423, 2, 0, 1638424, 3, 0, 1703936, 10, 0, 1703937, 7, 0, 1703938, 7, 0, 1703939, 14, 0, 1703940, 17, 0, 1703941, 7, 0, 1703942, 7, 0, 1703943, 7, 0, 1703944, 7, 0, 1703945, 7, 0, 1703946, 7, 0, 1703947, 7, 0, 1703948, 7, 0, 1703949, 7, 0, 1703950, 7, 0, 1703951, 7, 0, 1703952, 7, 0, 1703953, 7, 0, 1703954, 7, 0, 1703955, 7, 0, 1703956, 7, 0, 1703957, 7, 0, 1703958, 7, 0, 1703959, 7, 0, 1703960, 8, 0, 1703961, 10, 0, 1769472, 9, 0, 1769473, 27, 0, 1769474, 27, 0, 1769475, 22, 0, 1769476, 25, 0, 1769477, 27, 0, 1769478, 27, 0, 1769479, 27, 0, 1769480, 14, 0, 1769481, 16, 0, 1769482, 18, 0, 1769483, 27, 0, 1769484, 27, 0, 1769485, 27, 0, 1769486, 27, 0, 1769487, 27, 0, 1769488, 27, 0, 1769489, 27, 0, 1769490, 14, 0, 1769491, 15, 0, 1769492, 16, 0, 1769493, 17, 0, 1769494, 27, 0, 1769495, 27, 0, 1769496, 27, 0, 1769497, 9, 0, 1835009, 27, 0, 1835010, 27, 0, 1835011, 27, 0, 1835012, 27, 0, 1835013, 27, 0, 1835014, 27, 0, 1835015, 27, 0, 1835016, 22, 0, 1835017, 21, 0, 1835018, 18, 0, 1835019, 27, 0, 1835020, 27, 0, 1835021, 27, 0, 1835022, 27, 0, 1835023, 27, 0, 1835024, 27, 0, 1835025, 27, 0, 1835026, 22, 0, 1835027, 24, 0, 1835028, 23, 0, 1835029, 25, 0, 1835030, 27, 0, 1835031, 27, 0, 1835032, 27, 0, 1835033, 9, 0, 1900544, 2, 0, 1900547, 2, 0, 1900550, 2, 0, 1900553, 2, 0, 1900556, 2, 0, 1900559, 2, 0, 1900562, 2, 0, 1900565, 2, 0, 1900567, 2, 0 )
 
 [node name="TileMap" type="TileMap" parent="Node2D/YSort"]
 tile_set = SubResource( 13 )
@@ -968,6 +969,9 @@ collision_layer = 2
 [node name="Camera2D" type="Camera2D" parent="Node2D/YSort/Player"]
 position = Vector2( 52.3702, -5.37659 )
 current = true
+
+[node name="InventoryUI" parent="Node2D/YSort/Player" instance=ExtResource( 16 )]
+visible = false
 
 [node name="Dialog" parent="Node2D/YSort/Player" instance=ExtResource( 9 )]
 margin_left = -103.0
@@ -995,29 +999,31 @@ margin_bottom = 49.0
 
 [node name="Ok_Key" parent="Node2D/YSort/Player/Dialog" index="1"]
 position = Vector2( 298.627, 52.063 )
+frame = 0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Node2D/YSort"]
 position = Vector2( 22.7785, 386.969 )
 frames = SubResource( 23 )
-frame = 7
+frame = 4
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Node2D/YSort"]
 position = Vector2( -160.784, 399.469 )
 frames = SubResource( 23 )
+frame = 5
 playing = true
 offset = Vector2( 265.618, -11.9054 )
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Node2D/YSort"]
 position = Vector2( 298.517, 387.861 )
 frames = SubResource( 23 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Node2D/YSort"]
 position = Vector2( 392.919, 385.78 )
 frames = SubResource( 23 )
-frame = 2
+frame = 7
 playing = true
 
 [node name="Chest" type="StaticBody2D" parent="Node2D/YSort"]
@@ -1086,6 +1092,8 @@ stream = ExtResource( 11 )
 [node name="CollisionShape2D" parent="Node2D/PuzzleWall2/InteractionBox" index="0"]
 position = Vector2( 2.08112, 8.62173 )
 shape = SubResource( 28 )
+
+[connection signal="chestOpened" from="Node2D/YSort/Chest/Chest" to="Node2D/YSort/Player/InventoryUI" method="_on_Chest_chestOpened"]
 
 [editable path="Node2D/YSort/Player/Dialog"]
 [editable path="Node2D/YSort/Chest/Chest/InteractionBox"]

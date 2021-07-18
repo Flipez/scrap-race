@@ -22,4 +22,4 @@ func landing():
     $Ship.landing = true
     $Ship/Player.freeze(1,2,3)
     yield(get_tree().create_timer(3), "timeout")
-    get_tree().change_scene("res://Scenes/Level_2_LandingSite/LandingSite.tscn")
+    get_tree().change_scene("res://Scenes/Landing/Landing.tscn")

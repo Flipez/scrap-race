@@ -8,3 +8,5 @@ var landingSite = landingSiteStates.Start
 
 enum dungeonStates {PuzzleUnsolved, SignRead, PuzzleSolved, ChestOpened}
 var dungeonState = dungeonStates.PuzzleUnsolved
+
+var barrelJokesPosition = 0

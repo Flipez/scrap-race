@@ -1,10 +1,13 @@
 extends Sprite
 
+signal chestOpened
+
 func interact(_player):
   if StoryState.dungeonState == StoryState.dungeonStates.PuzzleSolved:
     frame = 222
     $AudioStreamPlayerTreasure.play()
     StoryState.dungeonState = StoryState.dungeonStates.ChestOpened
+    emit_signal("chestOpened")
   elif StoryState.dungeonState == StoryState.dungeonStates.ChestOpened:
     DialogController.createDialog([
       ["Scrat", "I think there's nothing more in it. I'd better go back to the ship and take another nap"]

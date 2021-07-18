@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+signal foundJuxBox
+
 var speed = 0
 var scrap_dialog = [
     ["Scrat", "The merchant doesn't sell any fuel but he might know where to find some."],
@@ -12,10 +14,13 @@ func interact(_player):
     if StoryState.landingSite == StoryState.landingSiteStates.FindScrap:
         # StoryState.landingSite = StoryState.landingSiteStates.SellScrap
         StoryState.landingSite = StoryState.landingSiteStates.AskBunker
-        DialogController.createDialog(scrap_dialog)
+        DialogController.createDialog(scrap_dialog, self, "foundJuxBox")
     
 func _process(delta):
     self.position.y -= speed * delta
 
 func take_off():
     speed = 30    
+
+func foundJuxBox():
+  emit_signal("foundJuxBox")

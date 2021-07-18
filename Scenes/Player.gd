@@ -73,7 +73,6 @@ func _on_InteractionTimer_timeout():
   state = MOVE
   interactionArea.disabled = true
 
-
 func _on_Area2D_area_entered(area):
   area.interact(self)
   
