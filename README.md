@@ -1,6 +1,6 @@
 # Scrap Race
 
-A puzzle adventure game by [Flipez](https://github.com/Flipez) and [Kjarrigan](https://github.com/Kjarrigan) featuring our protagonist Scrat, who is a treasure hunter travelling through space to find the stuff from the good ol' days )instead of the valuable stuff his coworkers seek). He is a bit lazy which makes his journey unnecessarily harder...
+A puzzle adventure game by [Flipez](https://github.com/Flipez) and [Kjarrigan](https://github.com/Kjarrigan) featuring our protagonist Scrat, who is a treasure hunter travelling through space to find the stuff from the good ol' days (instead of the valuable stuff his coworkers seek). He is a bit lazy which makes his journey unnecessarily harder...
 
 This is our game entry for the [GODOT WILD JAM # 35 - LOST TECH](https://itch.io/jam/godot-wild-jam-35)
 
